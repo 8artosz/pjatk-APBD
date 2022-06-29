@@ -1,0 +1,16 @@
+/Users/bartoszwasilewski/Desktop/pjatk-APBD/APBD1/bin/Debug/net5.0/Data/dane.csv
+/Users/bartoszwasilewski/Desktop/pjatk-APBD/APBD1/bin/Debug/net5.0/APBD1.deps.json
+/Users/bartoszwasilewski/Desktop/pjatk-APBD/APBD1/bin/Debug/net5.0/APBD1.runtimeconfig.json
+/Users/bartoszwasilewski/Desktop/pjatk-APBD/APBD1/bin/Debug/net5.0/APBD1.runtimeconfig.dev.json
+/Users/bartoszwasilewski/Desktop/pjatk-APBD/APBD1/bin/Debug/net5.0/APBD1.dll
+/Users/bartoszwasilewski/Desktop/pjatk-APBD/APBD1/bin/Debug/net5.0/ref/APBD1.dll
+/Users/bartoszwasilewski/Desktop/pjatk-APBD/APBD1/bin/Debug/net5.0/APBD1.pdb
+/Users/bartoszwasilewski/Desktop/pjatk-APBD/APBD1/obj/Debug/net5.0/APBD1.csprojAssemblyReference.cache
+/Users/bartoszwasilewski/Desktop/pjatk-APBD/APBD1/obj/Debug/net5.0/APBD1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/bartoszwasilewski/Desktop/pjatk-APBD/APBD1/obj/Debug/net5.0/APBD1.AssemblyInfoInputs.cache
+/Users/bartoszwasilewski/Desktop/pjatk-APBD/APBD1/obj/Debug/net5.0/APBD1.AssemblyInfo.cs
+/Users/bartoszwasilewski/Desktop/pjatk-APBD/APBD1/obj/Debug/net5.0/APBD1.csproj.CoreCompileInputs.cache
+/Users/bartoszwasilewski/Desktop/pjatk-APBD/APBD1/obj/Debug/net5.0/APBD1.dll
+/Users/bartoszwasilewski/Desktop/pjatk-APBD/APBD1/obj/Debug/net5.0/ref/APBD1.dll
+/Users/bartoszwasilewski/Desktop/pjatk-APBD/APBD1/obj/Debug/net5.0/APBD1.pdb
+/Users/bartoszwasilewski/Desktop/pjatk-APBD/APBD1/obj/Debug/net5.0/APBD1.genruntimeconfig.cache

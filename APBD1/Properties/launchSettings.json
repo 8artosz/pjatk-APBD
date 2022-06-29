@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "APBD2": {
+      "commandName": "Project",
+      "commandLineArgs": "Data\\dane.csv C:\\Users\\brtsz\\OneDrive\\Pulpit\\Nowyfolder json"
+    }
+  }
+}

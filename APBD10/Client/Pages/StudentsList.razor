@@ -1,0 +1,99 @@
+﻿@page "/"
+@inject IJSRuntime JsRuntime
+@inject NavigationManager navManager
+<h3>Studenci</h3>
+@if (Students == null)
+{
+    <img src="https://media0.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif" alt="Loading" />
+}
+else if (Students.Count == 0)
+{
+    <span>There are not students</span>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Avatar</th>
+                <th>
+                    <span class="sort-link" @onclick="@(() => SortTable("FirstName"))">First Name</span>
+                </th>
+                <th>
+                    <span class="sort-link" @onclick="@(() => SortTable("LastName"))">Last Name</span>
+                </th>
+                <th>
+                    <span class="sort-link" @onclick="@(() => SortTable("Birthdate"))">Birthdate</span>
+                </th>
+                <th>
+                    <span class="sort-link" @onclick="@(() => SortTable("Studies"))">Studies</span>
+                </th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Students.AsEnumerable().Take(10))
+            {
+                <tr>
+                    <td><img width="100" height="75" src=@item.Img /></td>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.Birthdate</td>
+                    <td>@item.Studies</td>
+                    <td>
+                        <a class="btn btn-danger" @onclick="() => Remove(item.IdStudent)">Delete</a>
+                        <a class="btn btn-success" href="studentdetails/details/@item.IdStudent">Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@code {
+    public List<Student> Students { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        var httpClient = new HttpClient();
+        var result = await httpClient.GetAsync("http://localhost:6663/api/students");
+        var data = await result.Content.ReadAsStringAsync();
+        Students = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Student>>(data);
+
+
+    }
+
+    private bool isSortedAscending;
+    private string activeSortColumn;
+    private void SortTable(string columnName)
+    {
+        if (columnName != activeSortColumn)
+        {
+            Students = Students.OrderBy(x => x.GetType().GetProperty(columnName).GetValue(x, null)).ToList();
+            isSortedAscending = true;
+            activeSortColumn = columnName;
+        }
+        else
+        {
+            if (isSortedAscending)
+            {
+                Students = Students.OrderByDescending(x => x.GetType().GetProperty(columnName).GetValue(x, null)).ToList();
+            }
+            else
+            {
+                Students = Students.OrderBy(x => x.GetType().GetProperty(columnName).GetValue(x, null)).ToList();
+            }
+            isSortedAscending = !isSortedAscending;
+        }
+    }
+    async Task Remove(int id)
+    {
+        bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", "Are you sure?");
+        if (confirmed)
+        {
+            HttpClient httpClient = new HttpClient();
+            await httpClient.DeleteAsync("http://localhost:6663/api/students/delete/" + id);
+            Students.Remove(Students.First(x => x.IdStudent == id));
+        }
+    }
+
+
+}

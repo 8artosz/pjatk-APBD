@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31105.61
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cw11.Server", "Server\cw11.Server.csproj", "{BE94201A-DC9D-44C1-A1DA-2A633EAF44E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cw11.Client", "Client\cw11.Client.csproj", "{37603BD8-BDC3-40EB-8ADE-9A0BB91CF3DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cw11.Shared", "Shared\cw11.Shared.csproj", "{DEB59ED1-F126-4AB0-8C98-643B1AF747A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE94201A-DC9D-44C1-A1DA-2A633EAF44E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE94201A-DC9D-44C1-A1DA-2A633EAF44E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE94201A-DC9D-44C1-A1DA-2A633EAF44E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE94201A-DC9D-44C1-A1DA-2A633EAF44E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37603BD8-BDC3-40EB-8ADE-9A0BB91CF3DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37603BD8-BDC3-40EB-8ADE-9A0BB91CF3DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37603BD8-BDC3-40EB-8ADE-9A0BB91CF3DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37603BD8-BDC3-40EB-8ADE-9A0BB91CF3DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEB59ED1-F126-4AB0-8C98-643B1AF747A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEB59ED1-F126-4AB0-8C98-643B1AF747A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEB59ED1-F126-4AB0-8C98-643B1AF747A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEB59ED1-F126-4AB0-8C98-643B1AF747A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D0E6B480-EE12-417A-9670-6FD659189D8C}
+	EndGlobalSection
+EndGlobal

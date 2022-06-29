@@ -1,0 +1,53 @@
+﻿@page "/studentdetails/details/{StudentId:int}"
+<h3>Student's Details</h3>
+<style>
+    input {
+        vertical-align: central;
+    }
+</style>
+@if (student == null)
+{
+    <img src="https://media0.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif" alt="Loading" />
+}
+else
+{
+<table style="width:90%">
+    <tr>
+        <td>First Name:</td>
+        <td> <input type="text" id="fname" name="fname" value=@student.FirstName style="text-align:center;"></td>
+        <td>Avatar:</td>
+        <td><input type="text" id="avatar" name="avatar" value=@student.Img style="text-align:center;"></td>
+    </tr>
+    <tr>
+        <td>Last Name:</td>
+        <td> <input type="text" id="lname" name="lname" value=@student.LastName style="text-align:center;"></td>
+        <td></td>
+        <td rowspan="5"><img  src=@student.Img width="202" height="150"/></td>
+    </tr>
+    <tr>
+        <td>Birthdate:</td>
+        <td><input type="text" id="birthd" name="birthd" value=@student.Birthdate style="text-align:center;"></td>
+    </tr>
+    <tr>
+        <td>Studies:</td>
+        <td><input type="text" id="studies" name="studies" value=@student.Studies style="text-align:center;"></td>
+
+    </tr>
+    <tr>
+        <a class="btn btn-success" href="">Return</a>
+    </tr>
+
+</table>
+}
+@code {
+    [Parameter] public int StudentId { get; set; }
+    public Student student;
+    protected override async Task OnInitializedAsync()
+    {
+        var httpClient = new HttpClient();
+        var result = await httpClient.GetAsync("http://localhost:6663/api/students/" + StudentId);
+        var data = await result.Content.ReadAsStringAsync();
+        student = Newtonsoft.Json.JsonConvert.DeserializeObject<Student>(data);
+
+    }
+}
